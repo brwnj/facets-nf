@@ -7,11 +7,9 @@ xx = preProcSample(rcmat, ndepth=15)
 oo = procSample(xx, min.nhet=5)
 fit = emcncf(oo)
 
-print("ploidy")
-print(fit\$ploidy)
-
-print("purity")
-print(fit\$purity)
+fileConn <- file("log.txt")
+writeLines(c("ploidy", fit\$ploidy, "purity", fit\$purity), fileConn)
+close(fileConn)
 
 save(xx, oo, fit, file="facets.rdata")
 

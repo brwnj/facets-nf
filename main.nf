@@ -64,6 +64,7 @@ process r_facets {
     path("facets.rdata"), emit: rdata
     path("facets.cncf"), emit: cncf
     path("facets.pdf"), emit: pdf
+    path("log.txt"), emit: log
 
     script:
     template 'facets.R'
